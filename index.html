@@ -3,32 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Multimedia Project</title>
+    <title>Christian's Music Player - Web Player</title>
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts (Real Spotify Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Background for WHOLE website */
+        html, body {
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-image: url('Music Background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            
+            background-blend-mode: overlay;
+        }
+    </style>
+    
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/725/725085.png">
 </head>
+
 <body>
 
-    <div class="container">
-        <!-- Header / Image Area -->
-        <div class="profile-card">
-            <h1>Multimedia Profile</h1>
-            <p>Click the buttons to interact!</p>
-            
-            <!-- Placeholder for an Image -->
-            <div class="image-box">
-                <img src="https://via.placeholder.com/150" alt="Profile Pic">
+    <div class="Music Player">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fa-brands fa-spotify"></i> <span>Christian</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="active"><i class="fa-solid fa-house"></i> Home</li>
+                <li><i class="fa-solid fa-magnifying-glass"></i> Search</li>
+                <li><i class="fa-solid fa-book"></i> Your Library</li>
+            </ul>
+            <hr>
+            <ul class="nav-menu">
+                <li><i class="fa-solid fa-plus-square"></i> Create Playlist</li>
+                <li><i class="fa-solid fa-heart"></i> Liked Songs</li>
+            </ul>
+            <hr>
+            <div class="playlist-scroll">
+                <p>Chill Vibes</p>
+                <p>Focus Flow</p>
+                <p>Workout Mix</p>
+                <p>Late Night Jazz</p>
+                <p>Lo-Fi Chill</p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main">
+            <!-- Top Navigation -->
+            <div class="top-nav">
+                <div class="nav-arrows">
+                    <button><i class="fa-solid fa-chevron-left"></i></button>
+                    <button><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="user-menu">
+                    <button class="install-btn"><i class="fa-solid fa-arrow-down"></i> Install App</button>
+                    <button class="user-btn"><i class="fa-solid fa-user"></i></button>
+                </div>
             </div>
 
-            <!-- Controls -->
-            <div class="controls">
-                <button onclick="playMusic()" id="musicBtn">🎵 Play Music</button>
-                <button onclick="changeTheme('blue')">🔵 Playlist</button>
-                <button onclick="changeTheme('red')">🔴 Search</button>
+            <!-- Hero Section -->
+            <div class="hero">
+                <div class="hero-content">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop" alt="Playlist">
+                    <div class="hero-text">
+                        <span>FEATURED PLAYLIST</span>
+                        <h1>Today's Top Hits</h1>
+                        <p>The hottest tracks right now - on repeat!</p>
+                        <div class="hero-buttons">
+                            <button class="play-btn" onclick="playMusic()"><i class="fa-solid fa-play"></i> Play</button>
+                            <button class="save-btn"><i class="fa-solid fa-heart"></i> Save</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <audio id="bgm" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+
+            <!-- Music Grid -->
+            <h2>Made For You</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=300&h=300&fit=crop" alt="Music">
+                    <h3>Discover Weekly</h3>
+                    <p>Your weekly mixtape of new music.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b235?w=300&h=300&fit=crop" alt="Music">
+                    <h3>Release Radar</h3>
+                    <p>New releases from your favorite artists.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=300&h=300&fit=crop" alt="Music">
+                    <h3>Chill Hits</h3>
+                    <p>Kick back to the best new and old chill hits.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=300&h=300&fit=crop" alt="Music">
+                    <h3>Rock Classics</h3>
+                    <p>Rock legends & iconic songs.</p>
+                </div>
+            </div>
+
+            <h2>Your Top Mixes</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=300&h=300&fit=crop" alt="Music">
+                    <h3>Mood Booster</h3>
+                    <p>Get happy with today's feel-good hits!</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d20?w=300&h=300&fit=crop" alt="Music">
+                    <h3>Peaceful Piano</h3>
+                    <p>Relax and indulge with beautiful piano pieces.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1504898770365-14faca6a7320?w=300&h=300&fit=crop" alt="Music">
+                    <h3>Deep Focus</h3>
+                    <p>Keep calm and focus with ambient music.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=300&h=300&fit=crop" alt="Music">
+                    <h3>Hot Country</h3>
+                    <p>Hottest country tracks right now.</p>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Bottom Player -->
+    <div class="player-bar">
+        <div class="now-playing">
+            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=100&h=100&fit=crop" alt="Album">
+            <div>
+                <h4>Today's Top Hits</h4>
+                <p>Various Artists</p>
+            </div>
+            <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+        </div>
+        <div class="player-controls">
+            <div class="control-buttons">
+                <button><i class="fa-solid fa-shuffle"></i></button>
+                <button><i class="fa-solid fa-backward-step"></i></button>
+                <button class="main-play" onclick="playMusic()"><i class="fa-solid fa-play"></i></button>
+                <button><i class="fa-solid fa-forward-step"></i></button>
+                <button><i class="fa-solid fa-repeat"></i></button>
+            </div>
+            <div class="progress-bar">
+                <span>0:00</span>
+                <div class="progress"><div class="progress-fill"></div></div>
+                <span>3:45</span>
+            </div>
+        </div>
+        <div class="volume">
+            <button><i class="fa-solid fa-microphone"></i></button>
+            <button><i class="fa-solid fa-list"></i></button>
+            <button><i class="fa-solid fa-computer"></i></button>
+            <button><i class="fa-solid fa-volume-high"></i></button>
+            <div class="volume-bar"><div class="volume-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Audio -->
+    <audio id="bgm" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
 
     <script src="script.js"></script>
 </body>
